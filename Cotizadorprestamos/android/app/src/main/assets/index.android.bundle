@@ -99142,22 +99142,76 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   function Form() {
     return _react.default.createElement(_reactNative.View, {
+      style: styles.viewForm,
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 7,
         columnNumber: 9
       }
-    }, _react.default.createElement(_reactNative.TextInput, {
-      placeholder: "Cantidad a pedir",
+    }, _react.default.createElement(_reactNative.View, {
+      style: styles.viewInputs,
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 8,
         columnNumber: 13
       }
-    }));
+    }, _react.default.createElement(_reactNative.TextInput, {
+      placeholder: "Cantidad a pedir",
+      keyboardType: "numeric",
+      style: styles.input,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 10,
+        columnNumber: 13
+      }
+    }), _react.default.createElement(_reactNative.TextInput, {
+      placeholder: "Interes %",
+      keyboardType: "numeric",
+      style: [styles.input, styles.inputPercentage],
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16,
+        columnNumber: 13
+      }
+    })));
   }
+
+  var styles = _reactNative.StyleSheet.create({
+    viewForm: {
+      position: 'absolute',
+      bottom: -90,
+      width: '85%',
+      paddingHorizontal: 50,
+      backgroundColor: _colors.default.PRIMARY_COLOR_DARK,
+      borderRadius: 30,
+      height: 180,
+      justifyContent: 'center'
+    },
+    viewInputs: {
+      flexDirection: 'row'
+    },
+    input: {
+      height: 50,
+      backgroundColor: '#FFF',
+      borderWidth: 1,
+      borderColor: _colors.default.PRIMARY_COLOR,
+      borderRadius: 5,
+      width: '60%',
+      marginRight: 5,
+      marginLeft: -5,
+      marginBottom: 10,
+      color: '#000',
+      paddingHorizontal: 20
+    },
+    inputPercentage: {
+      width: '40%',
+      marginLeft: 5
+    }
+  });
 },474,[1,55,2,475],"src/components/Form.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
