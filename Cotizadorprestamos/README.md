@@ -166,9 +166,32 @@ const styles = StyleSheet.create({
 
 });
 ~~~
+# Anadir diseno y valoes al Picker Select
+
+Anexo un ejemplo del codigo del picker Select
+para que esto funcione de una forma correcta es necesario realizar la instalacion del componente.
+
+~~~javascript
+npm install react-native-picker-select
+
+# React Native users
+npm install @react-native-picker/picker
+npx pod-install
+~~~
 # 
+![](https://raw.githubusercontent.com/lawnstarter/react-native-picker-select/ca6488c2eef5c776a8071400c8b7987712d43397/ex-android.gif)
 
+~~~javascript
+           <RNPickerSelect style={pickerSelectStyles}
+            onValueChange={(value) => console.log(value)}
+            items={[
+                { label: '3 Meses', value: '3' },
+                { label: '6 Meses', value: '6' },
+                { label: '12 Meses', value: '12' },
+                { label: '24 Meses', value: '24' },
 
-
+            ]}
+        />
+~~~        
 
 
