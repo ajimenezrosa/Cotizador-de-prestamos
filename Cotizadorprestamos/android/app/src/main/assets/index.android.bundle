@@ -99044,47 +99044,55 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/App.js";
 
   function App() {
-    return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactNative.SafeAreaView, {
-      style: styles.safeArea,
+    return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactNative.StatusBar, {
+      barStyle: 'light-content',
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 10,
         columnNumber: 7
       }
-    }, _react.default.createElement(_reactNative.Text, {
+    }), _react.default.createElement(_reactNative.SafeAreaView, {
+      style: styles.safeArea,
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 11,
+        columnNumber: 7
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12,
         columnNumber: 11
       }
     }, "Formulario HEAD")), _react.default.createElement(_reactNative.View, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14,
+        lineNumber: 15,
         columnNumber: 7
       }
     }, _react.default.createElement(_reactNative.Text, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15,
+        lineNumber: 16,
         columnNumber: 11
       }
     }, "Resultado")), _react.default.createElement(_reactNative.View, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17,
+        lineNumber: 18,
         columnNumber: 7
       }
     }, _react.default.createElement(_reactNative.Text, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18,
+        lineNumber: 19,
         columnNumber: 9
       }
     }, "Footer")));

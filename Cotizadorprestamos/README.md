@@ -75,3 +75,17 @@ para esto solo debemos hacer lo siguiente.
 ~~~javascript
 backgroundColor: colors.PRIMARY_COLOR,
 ~~~
+
+
+# 
+## Uso con Navigator #
+### Es posible tener múltiples componentes StatusBar montados al mismo tiempo. Los accesorios se fusionarán en el orden en que se montaron los componentes de StatusBar.
+
+~~~javascript
+import { StyleSheet, View, Text , SafeAreaView, StatusBar} from 'react-native';
+~~~
+
+y lo utilizamos de la siguiente manera.
+~~~javascript
+    <StatusBar barStyle={'light-content'} />
+~~~
