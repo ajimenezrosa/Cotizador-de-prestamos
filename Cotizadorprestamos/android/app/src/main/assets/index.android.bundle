@@ -1339,7 +1339,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   _reactNative.AppRegistry.registerComponent(_app.name, function () {
     return _App.default;
   });
-},0,[1,2,473,474],"index.js");
+},0,[1,2,473,475],"index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -99039,6 +99039,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
 
+  var _colors = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./src/utils/colors"));
+
   var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/App.js";
 
   function App() {
@@ -99090,19 +99092,30 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var styles = _reactNative.StyleSheet.create({
     safeArea: {
-      backgroundColor: '#F00',
+      backgroundColor: _colors.default.PRIMARY_COLOR,
       height: 200,
       borderBottomLeftRadius: 30,
       borderBottomRightRadius: 30,
       alignItems: 'center'
     }
   });
-},473,[1,55,2],"App.js");
+},473,[1,55,2,474],"App.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+  var _default = {
+    PRIMARY_COLOR: '#0098d3',
+    PRIMARY_COLOR_DARK: '#006691'
+  };
+  exports.default = _default;
+},474,[],"src/utils/colors.js");
 __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   module.exports = {
   "name": "Cotizadorprestamos",
   "displayName": "Cotizadorprestamos"
 };
-},474,[],"app.json");
+},475,[],"app.json");
 __r(94);
 __r(0);

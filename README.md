@@ -51,3 +51,27 @@ const styles = StyleSheet.create({
       <SafeAreaView style={styles.safeArea}>
 ~~~
 le estamos asigunado los estilos que creamos al componente ***SafeAreaView***.
+
+
+# Colores Globales de la Aplicacion
+
+creamos un fichero en src/utils
+~~~javascript
+
+export default {
+    PRIMARY_COLOR: '#0098d3',
+    PRIMARY_COLOR_DARK: '#006691',
+};
+~~~
+
+luego lo importamos de la siguiente manera
+~~~javascript
+import colors from './src/utils/colors';
+~~~
+
+ya estamos listo para utilizar los colores que creamos como recursos globales.
+
+para esto solo debemos hacer lo siguiente.
+~~~javascript
+backgroundColor: colors.PRIMARY_COLOR,
+~~~
