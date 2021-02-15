@@ -1339,7 +1339,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   _reactNative.AppRegistry.registerComponent(_app.name, function () {
     return _App.default;
   });
-},0,[1,2,473,476],"index.js");
+},0,[1,2,473,485],"index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -99123,7 +99123,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       marginTop: 15
     }
   });
-},473,[1,55,2,474,475],"App.js");
+},473,[1,55,2,474,484],"App.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -99136,7 +99136,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
 
-  var _colors = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "../utils/colors"));
+  var _reactNativePickerSelect = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "react-native-picker-select"));
+
+  var _colors = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "../utils/colors"));
 
   var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/src/components/Form.js";
 
@@ -99146,7 +99148,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 7,
+        lineNumber: 9,
         columnNumber: 9
       }
     }, _react.default.createElement(_reactNative.View, {
@@ -99154,7 +99156,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 8,
+        lineNumber: 10,
         columnNumber: 13
       }
     }, _react.default.createElement(_reactNative.TextInput, {
@@ -99164,7 +99166,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 10,
+        lineNumber: 12,
         columnNumber: 13
       }
     }), _react.default.createElement(_reactNative.TextInput, {
@@ -99174,10 +99176,30 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16,
+        lineNumber: 18,
         columnNumber: 13
       }
-    })));
+    })), _react.default.createElement(_reactNativePickerSelect.default, {
+      onValueChange: function onValueChange(value) {
+        return console.log(value);
+      },
+      items: [{
+        label: 'Football',
+        value: 'football'
+      }, {
+        label: 'Baseball',
+        value: 'baseball'
+      }, {
+        label: 'Hockey',
+        value: 'hockey'
+      }],
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24,
+        columnNumber: 12
+      }
+    }));
   }
 
   var styles = _reactNative.StyleSheet.create({
@@ -99212,7 +99234,2181 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       marginLeft: 5
     }
   });
-},474,[1,55,2,475],"src/components/Form.js");
+},474,[1,55,2,475,484],"src/components/Form.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, "defaultStyles", {
+    enumerable: true,
+    get: function get() {
+      return _styles.defaultStyles;
+    }
+  });
+  exports.default = void 0;
+
+  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/extends"));
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/createClass"));
+
+  var _assertThisInitialized2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/assertThisInitialized"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[9], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[10], "react-native");
+
+  var _propTypes = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "prop-types"));
+
+  var _lodash = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "lodash.isequal"));
+
+  var _picker = _$$_REQUIRE(_dependencyMap[13], "@react-native-picker/picker");
+
+  var _styles = _$$_REQUIRE(_dependencyMap[14], "./styles");
+
+  var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/node_modules/react-native-picker-select/src/index.js";
+
+  function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+  var RNPickerSelect = function (_PureComponent) {
+    (0, _inherits2.default)(RNPickerSelect, _PureComponent);
+
+    var _super = _createSuper(RNPickerSelect);
+
+    function RNPickerSelect(props) {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, RNPickerSelect);
+      _this = _super.call(this, props);
+
+      _this.componentDidUpdate = function (prevProps, prevState) {
+        var items = RNPickerSelect.handlePlaceholder({
+          placeholder: _this.props.placeholder
+        }).concat(_this.props.items);
+        var itemsChanged = !(0, _lodash.default)(prevState.items, items);
+
+        var _RNPickerSelect$getSe = RNPickerSelect.getSelectedItem({
+          items: items,
+          key: _this.props.itemKey,
+          value: _this.props.value
+        }),
+            selectedItem = _RNPickerSelect$getSe.selectedItem,
+            idx = _RNPickerSelect$getSe.idx;
+
+        var selectedItemChanged = !(0, _lodash.default)(_this.props.value, undefined) && !(0, _lodash.default)(prevState.selectedItem, selectedItem);
+
+        if (itemsChanged || selectedItemChanged) {
+          _this.props.onValueChange(selectedItem.value, idx);
+
+          _this.setState((0, _extends2.default)({}, itemsChanged ? {
+            items: items
+          } : {}, selectedItemChanged ? {
+            selectedItem: selectedItem
+          } : {}));
+        }
+      };
+
+      var _items = RNPickerSelect.handlePlaceholder({
+        placeholder: props.placeholder
+      }).concat(props.items);
+
+      var _RNPickerSelect$getSe2 = RNPickerSelect.getSelectedItem({
+        items: _items,
+        key: props.itemKey,
+        value: props.value
+      }),
+          _selectedItem = _RNPickerSelect$getSe2.selectedItem;
+
+      _this.state = {
+        items: _items,
+        selectedItem: _selectedItem,
+        showPicker: false,
+        animationType: undefined,
+        orientation: 'portrait',
+        doneDepressed: false
+      };
+      _this.onUpArrow = _this.onUpArrow.bind((0, _assertThisInitialized2.default)(_this));
+      _this.onDownArrow = _this.onDownArrow.bind((0, _assertThisInitialized2.default)(_this));
+      _this.onValueChange = _this.onValueChange.bind((0, _assertThisInitialized2.default)(_this));
+      _this.onOrientationChange = _this.onOrientationChange.bind((0, _assertThisInitialized2.default)(_this));
+      _this.setInputRef = _this.setInputRef.bind((0, _assertThisInitialized2.default)(_this));
+      _this.togglePicker = _this.togglePicker.bind((0, _assertThisInitialized2.default)(_this));
+      _this.renderInputAccessoryView = _this.renderInputAccessoryView.bind((0, _assertThisInitialized2.default)(_this));
+      return _this;
+    }
+
+    (0, _createClass2.default)(RNPickerSelect, [{
+      key: "onUpArrow",
+      value: function onUpArrow() {
+        var onUpArrow = this.props.onUpArrow;
+        this.togglePicker(false, onUpArrow);
+      }
+    }, {
+      key: "onDownArrow",
+      value: function onDownArrow() {
+        var onDownArrow = this.props.onDownArrow;
+        this.togglePicker(false, onDownArrow);
+      }
+    }, {
+      key: "onValueChange",
+      value: function onValueChange(value, index) {
+        var onValueChange = this.props.onValueChange;
+        onValueChange(value, index);
+        this.setState(function (prevState) {
+          return {
+            selectedItem: prevState.items[index]
+          };
+        });
+      }
+    }, {
+      key: "onOrientationChange",
+      value: function onOrientationChange(_ref) {
+        var nativeEvent = _ref.nativeEvent;
+        this.setState({
+          orientation: nativeEvent.orientation
+        });
+      }
+    }, {
+      key: "setInputRef",
+      value: function setInputRef(ref) {
+        this.inputRef = ref;
+      }
+    }, {
+      key: "getPlaceholderStyle",
+      value: function getPlaceholderStyle() {
+        var _this$props = this.props,
+            placeholder = _this$props.placeholder,
+            style = _this$props.style;
+        var selectedItem = this.state.selectedItem;
+
+        if (!(0, _lodash.default)(placeholder, {}) && selectedItem.label === placeholder.label) {
+          return (0, _extends2.default)({}, _styles.defaultStyles.placeholder, style.placeholder);
+        }
+
+        return {};
+      }
+    }, {
+      key: "triggerOpenCloseCallbacks",
+      value: function triggerOpenCloseCallbacks() {
+        var _this$props2 = this.props,
+            onOpen = _this$props2.onOpen,
+            onClose = _this$props2.onClose;
+        var showPicker = this.state.showPicker;
+
+        if (!showPicker && onOpen) {
+          onOpen();
+        }
+
+        if (showPicker && onClose) {
+          onClose();
+        }
+      }
+    }, {
+      key: "togglePicker",
+      value: function togglePicker() {
+        var animate = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+        var postToggleCallback = arguments.length > 1 ? arguments[1] : undefined;
+        var _this$props3 = this.props,
+            modalProps = _this$props3.modalProps,
+            disabled = _this$props3.disabled;
+        var showPicker = this.state.showPicker;
+
+        if (disabled) {
+          return;
+        }
+
+        if (!showPicker) {
+          _reactNative.Keyboard.dismiss();
+        }
+
+        var animationType = modalProps && modalProps.animationType ? modalProps.animationType : 'slide';
+        this.triggerOpenCloseCallbacks();
+        this.setState(function (prevState) {
+          return {
+            animationType: animate ? animationType : undefined,
+            showPicker: !prevState.showPicker
+          };
+        }, function () {
+          if (postToggleCallback) {
+            postToggleCallback();
+          }
+        });
+      }
+    }, {
+      key: "renderPickerItems",
+      value: function renderPickerItems() {
+        var _this2 = this;
+
+        var items = this.state.items;
+        return items.map(function (item) {
+          return _react.default.createElement(_picker.Picker.Item, {
+            label: item.label,
+            value: item.value,
+            key: item.key || item.label,
+            color: item.color,
+            __self: _this2,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 267,
+              columnNumber: 17
+            }
+          });
+        });
+      }
+    }, {
+      key: "renderInputAccessoryView",
+      value: function renderInputAccessoryView() {
+        var _this3 = this;
+
+        var _this$props4 = this.props,
+            InputAccessoryView = _this$props4.InputAccessoryView,
+            doneText = _this$props4.doneText,
+            onUpArrow = _this$props4.onUpArrow,
+            onDownArrow = _this$props4.onDownArrow,
+            onDonePress = _this$props4.onDonePress,
+            style = _this$props4.style,
+            touchableDoneProps = _this$props4.touchableDoneProps;
+        var doneDepressed = this.state.doneDepressed;
+
+        if (InputAccessoryView) {
+          return _react.default.createElement(InputAccessoryView, {
+            testID: "custom_input_accessory_view",
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 291,
+              columnNumber: 20
+            }
+          });
+        }
+
+        return _react.default.createElement(_reactNative.View, {
+          style: [_styles.defaultStyles.modalViewMiddle, style.modalViewMiddle],
+          testID: "input_accessory_view",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 295,
+            columnNumber: 13
+          }
+        }, _react.default.createElement(_reactNative.View, {
+          style: [_styles.defaultStyles.chevronContainer, style.chevronContainer],
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 299,
+            columnNumber: 17
+          }
+        }, _react.default.createElement(_reactNative.TouchableOpacity, {
+          activeOpacity: onUpArrow ? 0.5 : 1,
+          onPress: onUpArrow ? this.onUpArrow : null,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 300,
+            columnNumber: 21
+          }
+        }, _react.default.createElement(_reactNative.View, {
+          style: [_styles.defaultStyles.chevron, style.chevron, _styles.defaultStyles.chevronUp, style.chevronUp, onUpArrow ? [_styles.defaultStyles.chevronActive, style.chevronActive] : {}],
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 304,
+            columnNumber: 25
+          }
+        })), _react.default.createElement(_reactNative.TouchableOpacity, {
+          activeOpacity: onDownArrow ? 0.5 : 1,
+          onPress: onDownArrow ? this.onDownArrow : null,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 314,
+            columnNumber: 21
+          }
+        }, _react.default.createElement(_reactNative.View, {
+          style: [_styles.defaultStyles.chevron, style.chevron, _styles.defaultStyles.chevronDown, style.chevronDown, onDownArrow ? [_styles.defaultStyles.chevronActive, style.chevronActive] : {}],
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 318,
+            columnNumber: 25
+          }
+        }))), _react.default.createElement(_reactNative.TouchableOpacity, (0, _extends2.default)({
+          testID: "done_button",
+          onPress: function onPress() {
+            _this3.togglePicker(true, onDonePress);
+          },
+          onPressIn: function onPressIn() {
+            _this3.setState({
+              doneDepressed: true
+            });
+          },
+          onPressOut: function onPressOut() {
+            _this3.setState({
+              doneDepressed: false
+            });
+          },
+          hitSlop: {
+            top: 4,
+            right: 4,
+            bottom: 4,
+            left: 4
+          }
+        }, touchableDoneProps, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 331,
+            columnNumber: 17
+          }
+        }), _react.default.createElement(_reactNative.View, {
+          testID: "needed_for_touchable",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 345,
+            columnNumber: 21
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          testID: "done_text",
+          allowFontScaling: false,
+          style: [_styles.defaultStyles.done, style.done, doneDepressed ? [_styles.defaultStyles.doneDepressed, style.doneDepressed] : {}],
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 346,
+            columnNumber: 25
+          }
+        }, doneText))));
+      }
+    }, {
+      key: "renderIcon",
+      value: function renderIcon() {
+        var _this$props5 = this.props,
+            style = _this$props5.style,
+            Icon = _this$props5.Icon;
+
+        if (!Icon) {
+          return null;
+        }
+
+        return _react.default.createElement(_reactNative.View, {
+          testID: "icon_container",
+          style: [_styles.defaultStyles.iconContainer, style.iconContainer],
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 373,
+            columnNumber: 13
+          }
+        }, _react.default.createElement(Icon, {
+          testID: "icon",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 377,
+            columnNumber: 17
+          }
+        }));
+      }
+    }, {
+      key: "renderTextInputOrChildren",
+      value: function renderTextInputOrChildren() {
+        var _this$props6 = this.props,
+            children = _this$props6.children,
+            style = _this$props6.style,
+            textInputProps = _this$props6.textInputProps;
+        var selectedItem = this.state.selectedItem;
+        var containerStyle = _reactNative.Platform.OS === 'ios' ? style.inputIOSContainer : style.inputAndroidContainer;
+
+        if (children) {
+          return _react.default.createElement(_reactNative.View, {
+            pointerEvents: "box-only",
+            style: containerStyle,
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 391,
+              columnNumber: 17
+            }
+          }, children);
+        }
+
+        return _react.default.createElement(_reactNative.View, {
+          pointerEvents: "box-only",
+          style: containerStyle,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 398,
+            columnNumber: 13
+          }
+        }, _react.default.createElement(_reactNative.TextInput, (0, _extends2.default)({
+          testID: "text_input",
+          style: [_reactNative.Platform.OS === 'ios' ? style.inputIOS : style.inputAndroid, this.getPlaceholderStyle()],
+          value: selectedItem.inputLabel ? selectedItem.inputLabel : selectedItem.label,
+          ref: this.setInputRef,
+          editable: false
+        }, textInputProps, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 399,
+            columnNumber: 17
+          }
+        })), this.renderIcon());
+      }
+    }, {
+      key: "renderIOS",
+      value: function renderIOS() {
+        var _this4 = this;
+
+        var _this$props7 = this.props,
+            style = _this$props7.style,
+            modalProps = _this$props7.modalProps,
+            pickerProps = _this$props7.pickerProps,
+            touchableWrapperProps = _this$props7.touchableWrapperProps;
+        var _this$state = this.state,
+            animationType = _this$state.animationType,
+            orientation = _this$state.orientation,
+            selectedItem = _this$state.selectedItem,
+            showPicker = _this$state.showPicker;
+        return _react.default.createElement(_reactNative.View, {
+          style: [_styles.defaultStyles.viewContainer, style.viewContainer],
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 420,
+            columnNumber: 13
+          }
+        }, _react.default.createElement(_reactNative.TouchableOpacity, (0, _extends2.default)({
+          testID: "ios_touchable_wrapper",
+          onPress: function onPress() {
+            _this4.togglePicker(true);
+          },
+          activeOpacity: 1
+        }, touchableWrapperProps, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 421,
+            columnNumber: 17
+          }
+        }), this.renderTextInputOrChildren()), _react.default.createElement(_reactNative.Modal, (0, _extends2.default)({
+          testID: "ios_modal",
+          visible: showPicker,
+          transparent: true,
+          animationType: animationType,
+          supportedOrientations: ['portrait', 'landscape'],
+          onOrientationChange: this.onOrientationChange
+        }, modalProps, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 431,
+            columnNumber: 17
+          }
+        }), _react.default.createElement(_reactNative.TouchableOpacity, {
+          style: [_styles.defaultStyles.modalViewTop, style.modalViewTop],
+          testID: "ios_modal_top",
+          onPress: function onPress() {
+            _this4.togglePicker(true);
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 440,
+            columnNumber: 21
+          }
+        }), this.renderInputAccessoryView(), _react.default.createElement(_reactNative.View, {
+          style: [_styles.defaultStyles.modalViewBottom, {
+            height: orientation === 'portrait' ? 215 : 162
+          }, style.modalViewBottom],
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 448,
+            columnNumber: 21
+          }
+        }, _react.default.createElement(_picker.Picker, (0, _extends2.default)({
+          testID: "ios_picker",
+          onValueChange: this.onValueChange,
+          selectedValue: selectedItem.value
+        }, pickerProps, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 455,
+            columnNumber: 25
+          }
+        }), this.renderPickerItems()))));
+      }
+    }, {
+      key: "renderAndroidHeadless",
+      value: function renderAndroidHeadless() {
+        var _this$props8 = this.props,
+            disabled = _this$props8.disabled,
+            Icon = _this$props8.Icon,
+            style = _this$props8.style,
+            pickerProps = _this$props8.pickerProps,
+            onOpen = _this$props8.onOpen,
+            touchableWrapperProps = _this$props8.touchableWrapperProps,
+            fixAndroidTouchableBug = _this$props8.fixAndroidTouchableBug;
+        var selectedItem = this.state.selectedItem;
+        var Component = fixAndroidTouchableBug ? _reactNative.View : _reactNative.TouchableOpacity;
+        return _react.default.createElement(Component, (0, _extends2.default)({
+          testID: "android_touchable_wrapper",
+          onPress: onOpen,
+          activeOpacity: 1
+        }, touchableWrapperProps, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 483,
+            columnNumber: 13
+          }
+        }), _react.default.createElement(_reactNative.View, {
+          style: style.headlessAndroidContainer,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 489,
+            columnNumber: 17
+          }
+        }, this.renderTextInputOrChildren(), _react.default.createElement(_picker.Picker, (0, _extends2.default)({
+          style: [Icon ? {
+            backgroundColor: 'transparent'
+          } : {}, _styles.defaultStyles.headlessAndroidPicker, style.headlessAndroidPicker],
+          testID: "android_picker_headless",
+          enabled: !disabled,
+          onValueChange: this.onValueChange,
+          selectedValue: selectedItem.value
+        }, pickerProps, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 491,
+            columnNumber: 21
+          }
+        }), this.renderPickerItems())));
+      }
+    }, {
+      key: "renderAndroidNativePickerStyle",
+      value: function renderAndroidNativePickerStyle() {
+        var _this$props9 = this.props,
+            disabled = _this$props9.disabled,
+            Icon = _this$props9.Icon,
+            style = _this$props9.style,
+            pickerProps = _this$props9.pickerProps;
+        var selectedItem = this.state.selectedItem;
+        return _react.default.createElement(_reactNative.View, {
+          style: [_styles.defaultStyles.viewContainer, style.viewContainer],
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 515,
+            columnNumber: 13
+          }
+        }, _react.default.createElement(_picker.Picker, (0, _extends2.default)({
+          style: [Icon ? {
+            backgroundColor: 'transparent'
+          } : {}, style.inputAndroid, this.getPlaceholderStyle()],
+          testID: "android_picker",
+          enabled: !disabled,
+          onValueChange: this.onValueChange,
+          selectedValue: selectedItem.value
+        }, pickerProps, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 516,
+            columnNumber: 17
+          }
+        }), this.renderPickerItems()), this.renderIcon());
+      }
+    }, {
+      key: "renderWeb",
+      value: function renderWeb() {
+        var _this$props10 = this.props,
+            disabled = _this$props10.disabled,
+            style = _this$props10.style,
+            pickerProps = _this$props10.pickerProps;
+        var selectedItem = this.state.selectedItem;
+        return _react.default.createElement(_reactNative.View, {
+          style: [_styles.defaultStyles.viewContainer, style.viewContainer],
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 540,
+            columnNumber: 13
+          }
+        }, _react.default.createElement(_picker.Picker, (0, _extends2.default)({
+          style: [style.inputWeb],
+          testID: "web_picker",
+          enabled: !disabled,
+          onValueChange: this.onValueChange,
+          selectedValue: selectedItem.value
+        }, pickerProps, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 541,
+            columnNumber: 17
+          }
+        }), this.renderPickerItems()), this.renderIcon());
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this$props11 = this.props,
+            children = _this$props11.children,
+            useNativeAndroidPickerStyle = _this$props11.useNativeAndroidPickerStyle;
+
+        if (_reactNative.Platform.OS === 'ios') {
+          return this.renderIOS();
+        }
+
+        if (_reactNative.Platform.OS === 'web') {
+          return this.renderWeb();
+        }
+
+        if (children || !useNativeAndroidPickerStyle) {
+          return this.renderAndroidHeadless();
+        }
+
+        return this.renderAndroidNativePickerStyle();
+      }
+    }], [{
+      key: "handlePlaceholder",
+      value: function handlePlaceholder(_ref2) {
+        var placeholder = _ref2.placeholder;
+
+        if ((0, _lodash.default)(placeholder, {})) {
+          return [];
+        }
+
+        return [placeholder];
+      }
+    }, {
+      key: "getSelectedItem",
+      value: function getSelectedItem(_ref3) {
+        var items = _ref3.items,
+            key = _ref3.key,
+            value = _ref3.value;
+        var idx = items.findIndex(function (item) {
+          if (item.key && key) {
+            return (0, _lodash.default)(item.key, key);
+          }
+
+          return (0, _lodash.default)(item.value, value);
+        });
+
+        if (idx === -1) {
+          idx = 0;
+        }
+
+        return {
+          selectedItem: items[idx] || {},
+          idx: idx
+        };
+      }
+    }]);
+    return RNPickerSelect;
+  }(_react.PureComponent);
+
+  exports.default = RNPickerSelect;
+  RNPickerSelect.propTypes = {
+    onValueChange: _propTypes.default.func.isRequired,
+    items: _propTypes.default.arrayOf(_propTypes.default.shape({
+      label: _propTypes.default.string.isRequired,
+      value: _propTypes.default.any.isRequired,
+      inputLabel: _propTypes.default.string,
+      key: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number]),
+      color: _propTypes.default.string
+    })).isRequired,
+    value: _propTypes.default.any,
+    placeholder: _propTypes.default.shape({
+      label: _propTypes.default.string,
+      value: _propTypes.default.any,
+      key: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number]),
+      color: _propTypes.default.string
+    }),
+    disabled: _propTypes.default.bool,
+    itemKey: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number]),
+    style: _propTypes.default.shape({}),
+    children: _propTypes.default.any,
+    onOpen: _propTypes.default.func,
+    useNativeAndroidPickerStyle: _propTypes.default.bool,
+    fixAndroidTouchableBug: _propTypes.default.bool,
+    doneText: _propTypes.default.string,
+    onDonePress: _propTypes.default.func,
+    onUpArrow: _propTypes.default.func,
+    onDownArrow: _propTypes.default.func,
+    onClose: _propTypes.default.func,
+    modalProps: _propTypes.default.shape({}),
+    textInputProps: _propTypes.default.shape({}),
+    pickerProps: _propTypes.default.shape({}),
+    touchableDoneProps: _propTypes.default.shape({}),
+    touchableWrapperProps: _propTypes.default.shape({}),
+    Icon: _propTypes.default.func,
+    InputAccessoryView: _propTypes.default.func
+  };
+  RNPickerSelect.defaultProps = {
+    value: undefined,
+    placeholder: {
+      label: 'Select an item...',
+      value: null,
+      color: '#9EA0A4'
+    },
+    disabled: false,
+    itemKey: null,
+    style: {},
+    children: null,
+    useNativeAndroidPickerStyle: true,
+    fixAndroidTouchableBug: false,
+    doneText: 'Done',
+    onDonePress: null,
+    onUpArrow: null,
+    onDownArrow: null,
+    onOpen: null,
+    onClose: null,
+    modalProps: {},
+    textInputProps: {},
+    pickerProps: {},
+    touchableDoneProps: {},
+    touchableWrapperProps: {},
+    Icon: null,
+    InputAccessoryView: null
+  };
+},475,[1,9,13,26,27,40,37,39,36,55,2,71,476,477,483],"node_modules/react-native-picker-select/src/index.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var LARGE_ARRAY_SIZE = 200;
+  var HASH_UNDEFINED = '__lodash_hash_undefined__';
+  var COMPARE_PARTIAL_FLAG = 1,
+      COMPARE_UNORDERED_FLAG = 2;
+  var MAX_SAFE_INTEGER = 9007199254740991;
+  var argsTag = '[object Arguments]',
+      arrayTag = '[object Array]',
+      asyncTag = '[object AsyncFunction]',
+      boolTag = '[object Boolean]',
+      dateTag = '[object Date]',
+      errorTag = '[object Error]',
+      funcTag = '[object Function]',
+      genTag = '[object GeneratorFunction]',
+      mapTag = '[object Map]',
+      numberTag = '[object Number]',
+      nullTag = '[object Null]',
+      objectTag = '[object Object]',
+      promiseTag = '[object Promise]',
+      proxyTag = '[object Proxy]',
+      regexpTag = '[object RegExp]',
+      setTag = '[object Set]',
+      stringTag = '[object String]',
+      symbolTag = '[object Symbol]',
+      undefinedTag = '[object Undefined]',
+      weakMapTag = '[object WeakMap]';
+  var arrayBufferTag = '[object ArrayBuffer]',
+      dataViewTag = '[object DataView]',
+      float32Tag = '[object Float32Array]',
+      float64Tag = '[object Float64Array]',
+      int8Tag = '[object Int8Array]',
+      int16Tag = '[object Int16Array]',
+      int32Tag = '[object Int32Array]',
+      uint8Tag = '[object Uint8Array]',
+      uint8ClampedTag = '[object Uint8ClampedArray]',
+      uint16Tag = '[object Uint16Array]',
+      uint32Tag = '[object Uint32Array]';
+  var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
+  var reIsHostCtor = /^\[object .+?Constructor\]$/;
+  var reIsUint = /^(?:0|[1-9]\d*)$/;
+  var typedArrayTags = {};
+  typedArrayTags[float32Tag] = typedArrayTags[float64Tag] = typedArrayTags[int8Tag] = typedArrayTags[int16Tag] = typedArrayTags[int32Tag] = typedArrayTags[uint8Tag] = typedArrayTags[uint8ClampedTag] = typedArrayTags[uint16Tag] = typedArrayTags[uint32Tag] = true;
+  typedArrayTags[argsTag] = typedArrayTags[arrayTag] = typedArrayTags[arrayBufferTag] = typedArrayTags[boolTag] = typedArrayTags[dataViewTag] = typedArrayTags[dateTag] = typedArrayTags[errorTag] = typedArrayTags[funcTag] = typedArrayTags[mapTag] = typedArrayTags[numberTag] = typedArrayTags[objectTag] = typedArrayTags[regexpTag] = typedArrayTags[setTag] = typedArrayTags[stringTag] = typedArrayTags[weakMapTag] = false;
+  var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+  var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+  var root = freeGlobal || freeSelf || Function('return this')();
+  var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
+  var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+  var moduleExports = freeModule && freeModule.exports === freeExports;
+  var freeProcess = moduleExports && freeGlobal.process;
+
+  var nodeUtil = function () {
+    try {
+      return freeProcess && freeProcess.binding && freeProcess.binding('util');
+    } catch (e) {}
+  }();
+
+  var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
+
+  function arrayFilter(array, predicate) {
+    var index = -1,
+        length = array == null ? 0 : array.length,
+        resIndex = 0,
+        result = [];
+
+    while (++index < length) {
+      var value = array[index];
+
+      if (predicate(value, index, array)) {
+        result[resIndex++] = value;
+      }
+    }
+
+    return result;
+  }
+
+  function arrayPush(array, values) {
+    var index = -1,
+        length = values.length,
+        offset = array.length;
+
+    while (++index < length) {
+      array[offset + index] = values[index];
+    }
+
+    return array;
+  }
+
+  function arraySome(array, predicate) {
+    var index = -1,
+        length = array == null ? 0 : array.length;
+
+    while (++index < length) {
+      if (predicate(array[index], index, array)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  function baseTimes(n, iteratee) {
+    var index = -1,
+        result = Array(n);
+
+    while (++index < n) {
+      result[index] = iteratee(index);
+    }
+
+    return result;
+  }
+
+  function baseUnary(func) {
+    return function (value) {
+      return func(value);
+    };
+  }
+
+  function cacheHas(cache, key) {
+    return cache.has(key);
+  }
+
+  function getValue(object, key) {
+    return object == null ? undefined : object[key];
+  }
+
+  function mapToArray(map) {
+    var index = -1,
+        result = Array(map.size);
+    map.forEach(function (value, key) {
+      result[++index] = [key, value];
+    });
+    return result;
+  }
+
+  function overArg(func, transform) {
+    return function (arg) {
+      return func(transform(arg));
+    };
+  }
+
+  function setToArray(set) {
+    var index = -1,
+        result = Array(set.size);
+    set.forEach(function (value) {
+      result[++index] = value;
+    });
+    return result;
+  }
+
+  var arrayProto = Array.prototype,
+      funcProto = Function.prototype,
+      objectProto = Object.prototype;
+  var coreJsData = root['__core-js_shared__'];
+  var funcToString = funcProto.toString;
+  var hasOwnProperty = objectProto.hasOwnProperty;
+
+  var maskSrcKey = function () {
+    var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
+    return uid ? 'Symbol(src)_1.' + uid : '';
+  }();
+
+  var nativeObjectToString = objectProto.toString;
+  var reIsNative = RegExp('^' + funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&').replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$');
+  var Buffer = moduleExports ? root.Buffer : undefined,
+      Symbol = root.Symbol,
+      Uint8Array = root.Uint8Array,
+      propertyIsEnumerable = objectProto.propertyIsEnumerable,
+      splice = arrayProto.splice,
+      symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+  var nativeGetSymbols = Object.getOwnPropertySymbols,
+      nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined,
+      nativeKeys = overArg(Object.keys, Object);
+  var DataView = getNative(root, 'DataView'),
+      Map = getNative(root, 'Map'),
+      Promise = getNative(root, 'Promise'),
+      Set = getNative(root, 'Set'),
+      WeakMap = getNative(root, 'WeakMap'),
+      nativeCreate = getNative(Object, 'create');
+  var dataViewCtorString = toSource(DataView),
+      mapCtorString = toSource(Map),
+      promiseCtorString = toSource(Promise),
+      setCtorString = toSource(Set),
+      weakMapCtorString = toSource(WeakMap);
+  var symbolProto = Symbol ? Symbol.prototype : undefined,
+      symbolValueOf = symbolProto ? symbolProto.valueOf : undefined;
+
+  function Hash(entries) {
+    var index = -1,
+        length = entries == null ? 0 : entries.length;
+    this.clear();
+
+    while (++index < length) {
+      var entry = entries[index];
+      this.set(entry[0], entry[1]);
+    }
+  }
+
+  function hashClear() {
+    this.__data__ = nativeCreate ? nativeCreate(null) : {};
+    this.size = 0;
+  }
+
+  function hashDelete(key) {
+    var result = this.has(key) && delete this.__data__[key];
+    this.size -= result ? 1 : 0;
+    return result;
+  }
+
+  function hashGet(key) {
+    var data = this.__data__;
+
+    if (nativeCreate) {
+      var result = data[key];
+      return result === HASH_UNDEFINED ? undefined : result;
+    }
+
+    return hasOwnProperty.call(data, key) ? data[key] : undefined;
+  }
+
+  function hashHas(key) {
+    var data = this.__data__;
+    return nativeCreate ? data[key] !== undefined : hasOwnProperty.call(data, key);
+  }
+
+  function hashSet(key, value) {
+    var data = this.__data__;
+    this.size += this.has(key) ? 0 : 1;
+    data[key] = nativeCreate && value === undefined ? HASH_UNDEFINED : value;
+    return this;
+  }
+
+  Hash.prototype.clear = hashClear;
+  Hash.prototype['delete'] = hashDelete;
+  Hash.prototype.get = hashGet;
+  Hash.prototype.has = hashHas;
+  Hash.prototype.set = hashSet;
+
+  function ListCache(entries) {
+    var index = -1,
+        length = entries == null ? 0 : entries.length;
+    this.clear();
+
+    while (++index < length) {
+      var entry = entries[index];
+      this.set(entry[0], entry[1]);
+    }
+  }
+
+  function listCacheClear() {
+    this.__data__ = [];
+    this.size = 0;
+  }
+
+  function listCacheDelete(key) {
+    var data = this.__data__,
+        index = assocIndexOf(data, key);
+
+    if (index < 0) {
+      return false;
+    }
+
+    var lastIndex = data.length - 1;
+
+    if (index == lastIndex) {
+      data.pop();
+    } else {
+      splice.call(data, index, 1);
+    }
+
+    --this.size;
+    return true;
+  }
+
+  function listCacheGet(key) {
+    var data = this.__data__,
+        index = assocIndexOf(data, key);
+    return index < 0 ? undefined : data[index][1];
+  }
+
+  function listCacheHas(key) {
+    return assocIndexOf(this.__data__, key) > -1;
+  }
+
+  function listCacheSet(key, value) {
+    var data = this.__data__,
+        index = assocIndexOf(data, key);
+
+    if (index < 0) {
+      ++this.size;
+      data.push([key, value]);
+    } else {
+      data[index][1] = value;
+    }
+
+    return this;
+  }
+
+  ListCache.prototype.clear = listCacheClear;
+  ListCache.prototype['delete'] = listCacheDelete;
+  ListCache.prototype.get = listCacheGet;
+  ListCache.prototype.has = listCacheHas;
+  ListCache.prototype.set = listCacheSet;
+
+  function MapCache(entries) {
+    var index = -1,
+        length = entries == null ? 0 : entries.length;
+    this.clear();
+
+    while (++index < length) {
+      var entry = entries[index];
+      this.set(entry[0], entry[1]);
+    }
+  }
+
+  function mapCacheClear() {
+    this.size = 0;
+    this.__data__ = {
+      'hash': new Hash(),
+      'map': new (Map || ListCache)(),
+      'string': new Hash()
+    };
+  }
+
+  function mapCacheDelete(key) {
+    var result = getMapData(this, key)['delete'](key);
+    this.size -= result ? 1 : 0;
+    return result;
+  }
+
+  function mapCacheGet(key) {
+    return getMapData(this, key).get(key);
+  }
+
+  function mapCacheHas(key) {
+    return getMapData(this, key).has(key);
+  }
+
+  function mapCacheSet(key, value) {
+    var data = getMapData(this, key),
+        size = data.size;
+    data.set(key, value);
+    this.size += data.size == size ? 0 : 1;
+    return this;
+  }
+
+  MapCache.prototype.clear = mapCacheClear;
+  MapCache.prototype['delete'] = mapCacheDelete;
+  MapCache.prototype.get = mapCacheGet;
+  MapCache.prototype.has = mapCacheHas;
+  MapCache.prototype.set = mapCacheSet;
+
+  function SetCache(values) {
+    var index = -1,
+        length = values == null ? 0 : values.length;
+    this.__data__ = new MapCache();
+
+    while (++index < length) {
+      this.add(values[index]);
+    }
+  }
+
+  function setCacheAdd(value) {
+    this.__data__.set(value, HASH_UNDEFINED);
+
+    return this;
+  }
+
+  function setCacheHas(value) {
+    return this.__data__.has(value);
+  }
+
+  SetCache.prototype.add = SetCache.prototype.push = setCacheAdd;
+  SetCache.prototype.has = setCacheHas;
+
+  function Stack(entries) {
+    var data = this.__data__ = new ListCache(entries);
+    this.size = data.size;
+  }
+
+  function stackClear() {
+    this.__data__ = new ListCache();
+    this.size = 0;
+  }
+
+  function stackDelete(key) {
+    var data = this.__data__,
+        result = data['delete'](key);
+    this.size = data.size;
+    return result;
+  }
+
+  function stackGet(key) {
+    return this.__data__.get(key);
+  }
+
+  function stackHas(key) {
+    return this.__data__.has(key);
+  }
+
+  function stackSet(key, value) {
+    var data = this.__data__;
+
+    if (data instanceof ListCache) {
+      var pairs = data.__data__;
+
+      if (!Map || pairs.length < LARGE_ARRAY_SIZE - 1) {
+        pairs.push([key, value]);
+        this.size = ++data.size;
+        return this;
+      }
+
+      data = this.__data__ = new MapCache(pairs);
+    }
+
+    data.set(key, value);
+    this.size = data.size;
+    return this;
+  }
+
+  Stack.prototype.clear = stackClear;
+  Stack.prototype['delete'] = stackDelete;
+  Stack.prototype.get = stackGet;
+  Stack.prototype.has = stackHas;
+  Stack.prototype.set = stackSet;
+
+  function arrayLikeKeys(value, inherited) {
+    var isArr = isArray(value),
+        isArg = !isArr && isArguments(value),
+        isBuff = !isArr && !isArg && isBuffer(value),
+        isType = !isArr && !isArg && !isBuff && isTypedArray(value),
+        skipIndexes = isArr || isArg || isBuff || isType,
+        result = skipIndexes ? baseTimes(value.length, String) : [],
+        length = result.length;
+
+    for (var key in value) {
+      if ((inherited || hasOwnProperty.call(value, key)) && !(skipIndexes && (key == 'length' || isBuff && (key == 'offset' || key == 'parent') || isType && (key == 'buffer' || key == 'byteLength' || key == 'byteOffset') || isIndex(key, length)))) {
+        result.push(key);
+      }
+    }
+
+    return result;
+  }
+
+  function assocIndexOf(array, key) {
+    var length = array.length;
+
+    while (length--) {
+      if (eq(array[length][0], key)) {
+        return length;
+      }
+    }
+
+    return -1;
+  }
+
+  function baseGetAllKeys(object, keysFunc, symbolsFunc) {
+    var result = keysFunc(object);
+    return isArray(object) ? result : arrayPush(result, symbolsFunc(object));
+  }
+
+  function baseGetTag(value) {
+    if (value == null) {
+      return value === undefined ? undefinedTag : nullTag;
+    }
+
+    return symToStringTag && symToStringTag in Object(value) ? getRawTag(value) : objectToString(value);
+  }
+
+  function baseIsArguments(value) {
+    return isObjectLike(value) && baseGetTag(value) == argsTag;
+  }
+
+  function baseIsEqual(value, other, bitmask, customizer, stack) {
+    if (value === other) {
+      return true;
+    }
+
+    if (value == null || other == null || !isObjectLike(value) && !isObjectLike(other)) {
+      return value !== value && other !== other;
+    }
+
+    return baseIsEqualDeep(value, other, bitmask, customizer, baseIsEqual, stack);
+  }
+
+  function baseIsEqualDeep(object, other, bitmask, customizer, equalFunc, stack) {
+    var objIsArr = isArray(object),
+        othIsArr = isArray(other),
+        objTag = objIsArr ? arrayTag : getTag(object),
+        othTag = othIsArr ? arrayTag : getTag(other);
+    objTag = objTag == argsTag ? objectTag : objTag;
+    othTag = othTag == argsTag ? objectTag : othTag;
+    var objIsObj = objTag == objectTag,
+        othIsObj = othTag == objectTag,
+        isSameTag = objTag == othTag;
+
+    if (isSameTag && isBuffer(object)) {
+      if (!isBuffer(other)) {
+        return false;
+      }
+
+      objIsArr = true;
+      objIsObj = false;
+    }
+
+    if (isSameTag && !objIsObj) {
+      stack || (stack = new Stack());
+      return objIsArr || isTypedArray(object) ? equalArrays(object, other, bitmask, customizer, equalFunc, stack) : equalByTag(object, other, objTag, bitmask, customizer, equalFunc, stack);
+    }
+
+    if (!(bitmask & COMPARE_PARTIAL_FLAG)) {
+      var objIsWrapped = objIsObj && hasOwnProperty.call(object, '__wrapped__'),
+          othIsWrapped = othIsObj && hasOwnProperty.call(other, '__wrapped__');
+
+      if (objIsWrapped || othIsWrapped) {
+        var objUnwrapped = objIsWrapped ? object.value() : object,
+            othUnwrapped = othIsWrapped ? other.value() : other;
+        stack || (stack = new Stack());
+        return equalFunc(objUnwrapped, othUnwrapped, bitmask, customizer, stack);
+      }
+    }
+
+    if (!isSameTag) {
+      return false;
+    }
+
+    stack || (stack = new Stack());
+    return equalObjects(object, other, bitmask, customizer, equalFunc, stack);
+  }
+
+  function baseIsNative(value) {
+    if (!isObject(value) || isMasked(value)) {
+      return false;
+    }
+
+    var pattern = isFunction(value) ? reIsNative : reIsHostCtor;
+    return pattern.test(toSource(value));
+  }
+
+  function baseIsTypedArray(value) {
+    return isObjectLike(value) && isLength(value.length) && !!typedArrayTags[baseGetTag(value)];
+  }
+
+  function baseKeys(object) {
+    if (!isPrototype(object)) {
+      return nativeKeys(object);
+    }
+
+    var result = [];
+
+    for (var key in Object(object)) {
+      if (hasOwnProperty.call(object, key) && key != 'constructor') {
+        result.push(key);
+      }
+    }
+
+    return result;
+  }
+
+  function equalArrays(array, other, bitmask, customizer, equalFunc, stack) {
+    var isPartial = bitmask & COMPARE_PARTIAL_FLAG,
+        arrLength = array.length,
+        othLength = other.length;
+
+    if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
+      return false;
+    }
+
+    var stacked = stack.get(array);
+
+    if (stacked && stack.get(other)) {
+      return stacked == other;
+    }
+
+    var index = -1,
+        result = true,
+        seen = bitmask & COMPARE_UNORDERED_FLAG ? new SetCache() : undefined;
+    stack.set(array, other);
+    stack.set(other, array);
+
+    while (++index < arrLength) {
+      var arrValue = array[index],
+          othValue = other[index];
+
+      if (customizer) {
+        var compared = isPartial ? customizer(othValue, arrValue, index, other, array, stack) : customizer(arrValue, othValue, index, array, other, stack);
+      }
+
+      if (compared !== undefined) {
+        if (compared) {
+          continue;
+        }
+
+        result = false;
+        break;
+      }
+
+      if (seen) {
+        if (!arraySome(other, function (othValue, othIndex) {
+          if (!cacheHas(seen, othIndex) && (arrValue === othValue || equalFunc(arrValue, othValue, bitmask, customizer, stack))) {
+            return seen.push(othIndex);
+          }
+        })) {
+          result = false;
+          break;
+        }
+      } else if (!(arrValue === othValue || equalFunc(arrValue, othValue, bitmask, customizer, stack))) {
+        result = false;
+        break;
+      }
+    }
+
+    stack['delete'](array);
+    stack['delete'](other);
+    return result;
+  }
+
+  function equalByTag(object, other, tag, bitmask, customizer, equalFunc, stack) {
+    switch (tag) {
+      case dataViewTag:
+        if (object.byteLength != other.byteLength || object.byteOffset != other.byteOffset) {
+          return false;
+        }
+
+        object = object.buffer;
+        other = other.buffer;
+
+      case arrayBufferTag:
+        if (object.byteLength != other.byteLength || !equalFunc(new Uint8Array(object), new Uint8Array(other))) {
+          return false;
+        }
+
+        return true;
+
+      case boolTag:
+      case dateTag:
+      case numberTag:
+        return eq(+object, +other);
+
+      case errorTag:
+        return object.name == other.name && object.message == other.message;
+
+      case regexpTag:
+      case stringTag:
+        return object == other + '';
+
+      case mapTag:
+        var convert = mapToArray;
+
+      case setTag:
+        var isPartial = bitmask & COMPARE_PARTIAL_FLAG;
+        convert || (convert = setToArray);
+
+        if (object.size != other.size && !isPartial) {
+          return false;
+        }
+
+        var stacked = stack.get(object);
+
+        if (stacked) {
+          return stacked == other;
+        }
+
+        bitmask |= COMPARE_UNORDERED_FLAG;
+        stack.set(object, other);
+        var result = equalArrays(convert(object), convert(other), bitmask, customizer, equalFunc, stack);
+        stack['delete'](object);
+        return result;
+
+      case symbolTag:
+        if (symbolValueOf) {
+          return symbolValueOf.call(object) == symbolValueOf.call(other);
+        }
+
+    }
+
+    return false;
+  }
+
+  function equalObjects(object, other, bitmask, customizer, equalFunc, stack) {
+    var isPartial = bitmask & COMPARE_PARTIAL_FLAG,
+        objProps = getAllKeys(object),
+        objLength = objProps.length,
+        othProps = getAllKeys(other),
+        othLength = othProps.length;
+
+    if (objLength != othLength && !isPartial) {
+      return false;
+    }
+
+    var index = objLength;
+
+    while (index--) {
+      var key = objProps[index];
+
+      if (!(isPartial ? key in other : hasOwnProperty.call(other, key))) {
+        return false;
+      }
+    }
+
+    var stacked = stack.get(object);
+
+    if (stacked && stack.get(other)) {
+      return stacked == other;
+    }
+
+    var result = true;
+    stack.set(object, other);
+    stack.set(other, object);
+    var skipCtor = isPartial;
+
+    while (++index < objLength) {
+      key = objProps[index];
+      var objValue = object[key],
+          othValue = other[key];
+
+      if (customizer) {
+        var compared = isPartial ? customizer(othValue, objValue, key, other, object, stack) : customizer(objValue, othValue, key, object, other, stack);
+      }
+
+      if (!(compared === undefined ? objValue === othValue || equalFunc(objValue, othValue, bitmask, customizer, stack) : compared)) {
+        result = false;
+        break;
+      }
+
+      skipCtor || (skipCtor = key == 'constructor');
+    }
+
+    if (result && !skipCtor) {
+      var objCtor = object.constructor,
+          othCtor = other.constructor;
+
+      if (objCtor != othCtor && 'constructor' in object && 'constructor' in other && !(typeof objCtor == 'function' && objCtor instanceof objCtor && typeof othCtor == 'function' && othCtor instanceof othCtor)) {
+        result = false;
+      }
+    }
+
+    stack['delete'](object);
+    stack['delete'](other);
+    return result;
+  }
+
+  function getAllKeys(object) {
+    return baseGetAllKeys(object, keys, getSymbols);
+  }
+
+  function getMapData(map, key) {
+    var data = map.__data__;
+    return isKeyable(key) ? data[typeof key == 'string' ? 'string' : 'hash'] : data.map;
+  }
+
+  function getNative(object, key) {
+    var value = getValue(object, key);
+    return baseIsNative(value) ? value : undefined;
+  }
+
+  function getRawTag(value) {
+    var isOwn = hasOwnProperty.call(value, symToStringTag),
+        tag = value[symToStringTag];
+
+    try {
+      value[symToStringTag] = undefined;
+      var unmasked = true;
+    } catch (e) {}
+
+    var result = nativeObjectToString.call(value);
+
+    if (unmasked) {
+      if (isOwn) {
+        value[symToStringTag] = tag;
+      } else {
+        delete value[symToStringTag];
+      }
+    }
+
+    return result;
+  }
+
+  var getSymbols = !nativeGetSymbols ? stubArray : function (object) {
+    if (object == null) {
+      return [];
+    }
+
+    object = Object(object);
+    return arrayFilter(nativeGetSymbols(object), function (symbol) {
+      return propertyIsEnumerable.call(object, symbol);
+    });
+  };
+  var getTag = baseGetTag;
+
+  if (DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag || Map && getTag(new Map()) != mapTag || Promise && getTag(Promise.resolve()) != promiseTag || Set && getTag(new Set()) != setTag || WeakMap && getTag(new WeakMap()) != weakMapTag) {
+    getTag = function getTag(value) {
+      var result = baseGetTag(value),
+          Ctor = result == objectTag ? value.constructor : undefined,
+          ctorString = Ctor ? toSource(Ctor) : '';
+
+      if (ctorString) {
+        switch (ctorString) {
+          case dataViewCtorString:
+            return dataViewTag;
+
+          case mapCtorString:
+            return mapTag;
+
+          case promiseCtorString:
+            return promiseTag;
+
+          case setCtorString:
+            return setTag;
+
+          case weakMapCtorString:
+            return weakMapTag;
+        }
+      }
+
+      return result;
+    };
+  }
+
+  function isIndex(value, length) {
+    length = length == null ? MAX_SAFE_INTEGER : length;
+    return !!length && (typeof value == 'number' || reIsUint.test(value)) && value > -1 && value % 1 == 0 && value < length;
+  }
+
+  function isKeyable(value) {
+    var type = typeof value;
+    return type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean' ? value !== '__proto__' : value === null;
+  }
+
+  function isMasked(func) {
+    return !!maskSrcKey && maskSrcKey in func;
+  }
+
+  function isPrototype(value) {
+    var Ctor = value && value.constructor,
+        proto = typeof Ctor == 'function' && Ctor.prototype || objectProto;
+    return value === proto;
+  }
+
+  function objectToString(value) {
+    return nativeObjectToString.call(value);
+  }
+
+  function toSource(func) {
+    if (func != null) {
+      try {
+        return funcToString.call(func);
+      } catch (e) {}
+
+      try {
+        return func + '';
+      } catch (e) {}
+    }
+
+    return '';
+  }
+
+  function eq(value, other) {
+    return value === other || value !== value && other !== other;
+  }
+
+  var isArguments = baseIsArguments(function () {
+    return arguments;
+  }()) ? baseIsArguments : function (value) {
+    return isObjectLike(value) && hasOwnProperty.call(value, 'callee') && !propertyIsEnumerable.call(value, 'callee');
+  };
+  var isArray = Array.isArray;
+
+  function isArrayLike(value) {
+    return value != null && isLength(value.length) && !isFunction(value);
+  }
+
+  var isBuffer = nativeIsBuffer || stubFalse;
+
+  function isEqual(value, other) {
+    return baseIsEqual(value, other);
+  }
+
+  function isFunction(value) {
+    if (!isObject(value)) {
+      return false;
+    }
+
+    var tag = baseGetTag(value);
+    return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
+  }
+
+  function isLength(value) {
+    return typeof value == 'number' && value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+  }
+
+  function isObject(value) {
+    var type = typeof value;
+    return value != null && (type == 'object' || type == 'function');
+  }
+
+  function isObjectLike(value) {
+    return value != null && typeof value == 'object';
+  }
+
+  var isTypedArray = nodeIsTypedArray ? baseUnary(nodeIsTypedArray) : baseIsTypedArray;
+
+  function keys(object) {
+    return isArrayLike(object) ? arrayLikeKeys(object) : baseKeys(object);
+  }
+
+  function stubArray() {
+    return [];
+  }
+
+  function stubFalse() {
+    return false;
+  }
+
+  module.exports = isEqual;
+},476,[],"node_modules/lodash.isequal/index.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, "Picker", {
+    enumerable: true,
+    get: function get() {
+      return _Picker.default;
+    }
+  });
+  Object.defineProperty(exports, "PickerIOS", {
+    enumerable: true,
+    get: function get() {
+      return _PickerIOS.default;
+    }
+  });
+
+  var _Picker = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./Picker"));
+
+  var _PickerIOS = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "./PickerIOS"));
+},477,[1,478,480],"node_modules/@react-native-picker/picker/js/index.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  'use strict';
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/extends"));
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/createClass"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
+
+  var _PickerAndroid = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./PickerAndroid"));
+
+  var _PickerIOS = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "./PickerIOS"));
+
+  var _PickerWindows = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "./PickerWindows"));
+
+  var _PickerMacOS = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[13], "./PickerMacOS"));
+
+  var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/node_modules/@react-native-picker/picker/js/Picker.js";
+
+  function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+  var MODE_DIALOG = 'dialog';
+  var MODE_DROPDOWN = 'dropdown';
+
+  var PickerItem = function (_React$Component) {
+    (0, _inherits2.default)(PickerItem, _React$Component);
+
+    var _super = _createSuper(PickerItem);
+
+    function PickerItem() {
+      (0, _classCallCheck2.default)(this, PickerItem);
+      return _super.apply(this, arguments);
+    }
+
+    (0, _createClass2.default)(PickerItem, [{
+      key: "render",
+      value: function render() {
+        throw null;
+      }
+    }]);
+    return PickerItem;
+  }(React.Component);
+
+  var Picker = function (_React$Component2) {
+    (0, _inherits2.default)(Picker, _React$Component2);
+
+    var _super2 = _createSuper(Picker);
+
+    function Picker() {
+      (0, _classCallCheck2.default)(this, Picker);
+      return _super2.apply(this, arguments);
+    }
+
+    (0, _createClass2.default)(Picker, [{
+      key: "render",
+      value: function render() {
+        if (_reactNative.Platform.OS === 'ios') {
+          return React.createElement(_PickerIOS.default, (0, _extends2.default)({}, this.props, {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 144,
+              columnNumber: 14
+            }
+          }), this.props.children);
+        } else if (_reactNative.Platform.OS === 'macos') {
+          return React.createElement(_PickerMacOS.default, (0, _extends2.default)({}, this.props, {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 148,
+              columnNumber: 14
+            }
+          }), this.props.children);
+        } else if (_reactNative.Platform.OS === 'android') {
+          return React.createElement(_PickerAndroid.default, (0, _extends2.default)({}, this.props, {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 153,
+              columnNumber: 9
+            }
+          }), this.props.children);
+        } else if (_reactNative.Platform.OS === 'windows') {
+          return React.createElement(_PickerWindows.default, (0, _extends2.default)({}, this.props, {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 157,
+              columnNumber: 9
+            }
+          }), this.props.children);
+        } else {
+          return null;
+        }
+      }
+    }]);
+    return Picker;
+  }(React.Component);
+
+  Picker.MODE_DIALOG = MODE_DIALOG;
+  Picker.MODE_DROPDOWN = MODE_DROPDOWN;
+  Picker.Item = PickerItem;
+  Picker.defaultProps = {
+    mode: MODE_DIALOG
+  };
+  var _default = Picker;
+  exports.default = _default;
+},478,[1,9,13,26,27,37,39,36,55,2,479,480,481,482],"node_modules/@react-native-picker/picker/js/Picker.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  'use strict';
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/inherits"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[8], "react-native");
+
+  var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/node_modules/@react-native-picker/picker/js/PickerAndroid.android.js";
+
+  function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+  var AndroidDropdownPickerNativeComponent = (0, _reactNative.requireNativeComponent)('RNCAndroidDropdownPicker');
+  var AndroidDialogPickerNativeComponent = (0, _reactNative.requireNativeComponent)('RNCAndroidDialogPicker');
+  var REF_PICKER = 'picker';
+  var MODE_DROPDOWN = 'dropdown';
+
+  var PickerAndroid = function (_React$Component) {
+    (0, _inherits2.default)(PickerAndroid, _React$Component);
+
+    var _super = _createSuper(PickerAndroid);
+
+    function PickerAndroid() {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, PickerAndroid);
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = _super.call.apply(_super, [this].concat(args));
+      _this.state = PickerAndroid.getDerivedStateFromProps(_this.props);
+
+      _this._onChange = function (event) {
+        if (_this.props.onValueChange) {
+          var position = event.nativeEvent.position;
+
+          if (position >= 0) {
+            var children = _react.default.Children.toArray(_this.props.children).filter(function (item) {
+              return item != null;
+            });
+
+            var value = children[position].props.value;
+
+            _this.props.onValueChange(value, position);
+          } else {
+            _this.props.onValueChange(null, position);
+          }
+        }
+
+        if (_this.refs[REF_PICKER] && _this.state.selectedIndex !== event.nativeEvent.position) {
+          _this.refs[REF_PICKER].setNativeProps({
+            selected: _this.state.selectedIndex
+          });
+        }
+      };
+
+      return _this;
+    }
+
+    (0, _createClass2.default)(PickerAndroid, [{
+      key: "render",
+      value: function render() {
+        var Picker = this.props.mode === MODE_DROPDOWN ? AndroidDropdownPickerNativeComponent : AndroidDialogPickerNativeComponent;
+        var nativeProps = {
+          enabled: this.props.enabled,
+          items: this.state.items,
+          mode: this.props.mode,
+          onSelect: this._onChange,
+          prompt: this.props.prompt,
+          selected: this.state.selectedIndex,
+          testID: this.props.testID,
+          dropdownIconColor: this.props.dropdownIconColor,
+          style: [styles.pickerAndroid, this.props.style],
+          accessibilityLabel: this.props.accessibilityLabel
+        };
+        return _react.default.createElement(Picker, (0, _extends2.default)({
+          ref: REF_PICKER
+        }, nativeProps, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 115,
+            columnNumber: 12
+          }
+        }));
+      }
+    }], [{
+      key: "getDerivedStateFromProps",
+      value: function getDerivedStateFromProps(props) {
+        var selectedIndex = 0;
+
+        var items = _react.default.Children.toArray(props.children).map(function (child, index) {
+          if (child.props.value === props.selectedValue) {
+            selectedIndex = index;
+          }
+
+          var childProps = {
+            value: child.props.value,
+            label: child.props.label
+          };
+
+          if (child.props.fontFamily) {
+            childProps.fontFamily = child.props.fontFamily;
+          }
+
+          if (child.props.color) {
+            childProps.color = (0, _reactNative.processColor)(child.props.color);
+          }
+
+          return childProps;
+        });
+
+        return {
+          selectedIndex: selectedIndex,
+          items: items
+        };
+      }
+    }]);
+    return PickerAndroid;
+  }(_react.default.Component);
+
+  var styles = _reactNative.StyleSheet.create({
+    pickerAndroid: {
+      height: 50
+    }
+  });
+
+  var _default = PickerAndroid;
+  exports.default = _default;
+},479,[1,13,26,27,37,39,36,55,2],"node_modules/@react-native-picker/picker/js/PickerAndroid.android.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireWildcard");
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[2], "react"));
+
+  var _UnimplementedView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "react-native/Libraries/Components/UnimplementedViews/UnimplementedView"));
+
+  var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/node_modules/@react-native-picker/picker/js/PickerIOS.js";
+
+  function PickerIOS() {
+    return React.createElement(_UnimplementedView.default, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9,
+        columnNumber: 10
+      }
+    });
+  }
+
+  PickerIOS.Item = _UnimplementedView.default;
+  var _default = PickerIOS;
+  exports.default = _default;
+},480,[9,1,55,354],"node_modules/@react-native-picker/picker/js/PickerIOS.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  'use strict';
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _UnimplementedView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react-native/Libraries/Components/UnimplementedViews/UnimplementedView"));
+
+  var _default = _UnimplementedView.default;
+  exports.default = _default;
+},481,[1,354],"node_modules/@react-native-picker/picker/js/PickerWindows.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/inherits"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
+
+  var _UnimplementedView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "react-native/Libraries/Components/UnimplementedViews/UnimplementedView"));
+
+  var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/node_modules/@react-native-picker/picker/js/PickerMacOS.js";
+
+  function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+  var PickerMacOS = function (_React$Component) {
+    (0, _inherits2.default)(PickerMacOS, _React$Component);
+
+    var _super = _createSuper(PickerMacOS);
+
+    function PickerMacOS() {
+      (0, _classCallCheck2.default)(this, PickerMacOS);
+      return _super.apply(this, arguments);
+    }
+
+    (0, _createClass2.default)(PickerMacOS, [{
+      key: "render",
+      value: function render() {
+        return React.createElement(_UnimplementedView.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15,
+            columnNumber: 12
+          }
+        });
+      }
+    }]);
+    return PickerMacOS;
+  }(React.Component);
+
+  PickerMacOS.Item = _UnimplementedView.default;
+  var _default = PickerMacOS;
+  exports.default = _default;
+},482,[1,9,26,27,37,39,36,55,354],"node_modules/@react-native-picker/picker/js/PickerMacOS.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.defaultStyles = void 0;
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+
+  var defaultStyles = _reactNative.StyleSheet.create({
+    viewContainer: {
+      alignSelf: 'stretch'
+    },
+    iconContainer: {
+      position: 'absolute',
+      right: 0
+    },
+    modalViewTop: {
+      flex: 1
+    },
+    modalViewMiddle: {
+      height: 45,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingHorizontal: 10,
+      backgroundColor: '#f8f8f8',
+      borderTopWidth: 1,
+      borderTopColor: '#dedede',
+      zIndex: 2
+    },
+    chevronContainer: {
+      flexDirection: 'row'
+    },
+    chevron: {
+      width: 15,
+      height: 15,
+      backgroundColor: 'transparent',
+      borderColor: '#a1a1a1',
+      borderTopWidth: 1.5,
+      borderRightWidth: 1.5
+    },
+    chevronUp: {
+      marginLeft: 11,
+      transform: [{
+        translateY: 4
+      }, {
+        rotate: '-45deg'
+      }]
+    },
+    chevronDown: {
+      marginLeft: 22,
+      transform: [{
+        translateY: -5
+      }, {
+        rotate: '135deg'
+      }]
+    },
+    chevronActive: {
+      borderColor: '#007aff'
+    },
+    done: {
+      color: '#007aff',
+      fontWeight: '600',
+      fontSize: 17,
+      paddingTop: 1,
+      paddingRight: 11
+    },
+    doneDepressed: {
+      fontSize: 19
+    },
+    modalViewBottom: {
+      justifyContent: 'center',
+      backgroundColor: '#d0d4da'
+    },
+    placeholder: {
+      color: '#c7c7cd'
+    },
+    headlessAndroidPicker: {
+      position: 'absolute',
+      width: '100%',
+      height: '100%',
+      color: 'transparent',
+      opacity: 0
+    }
+  });
+
+  exports.defaultStyles = defaultStyles;
+},483,[2],"node_modules/react-native-picker-select/src/styles.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -99223,12 +101419,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     PRIMARY_COLOR_DARK: '#006691'
   };
   exports.default = _default;
-},475,[],"src/utils/colors.js");
+},484,[],"src/utils/colors.js");
 __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   module.exports = {
   "name": "Cotizadorprestamos",
   "displayName": "Cotizadorprestamos"
 };
-},476,[],"app.json");
+},485,[],"app.json");
 __r(94);
 __r(0);
