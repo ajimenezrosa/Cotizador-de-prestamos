@@ -24,6 +24,8 @@ export default function App() {
 }
 ~~~
 
+
+
 primero Importamos el **'react-native'** para tener acceso a los elementos de React.
 
 luego importamos los elementos de ***'react-native'***, esto para tener acceso a los elemento a utilizar de React-native.

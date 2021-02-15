@@ -99094,7 +99094,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       height: 200,
       borderBottomLeftRadius: 30,
       borderBottomRightRadius: 30,
-      justifyContent: 'center'
+      alignItems: 'center'
     }
   });
 },473,[1,55,2],"App.js");
