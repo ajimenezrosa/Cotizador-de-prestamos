@@ -1339,7 +1339,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   _reactNative.AppRegistry.registerComponent(_app.name, function () {
     return _App.default;
   });
-},0,[1,2,473,475],"index.js");
+},0,[1,2,473,476],"index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -99039,7 +99039,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
 
-  var _colors = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./src/utils/colors"));
+  var _Form = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./src/components/Form"));
+
+  var _colors = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./src/utils/colors"));
 
   var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/App.js";
 
@@ -99049,7 +99051,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 10,
+        lineNumber: 11,
         columnNumber: 7
       }
     }), _react.default.createElement(_reactNative.SafeAreaView, {
@@ -99057,42 +99059,50 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 11,
+        lineNumber: 12,
         columnNumber: 7
       }
     }, _react.default.createElement(_reactNative.Text, {
+      style: styles.titleApp,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12,
+        lineNumber: 13,
         columnNumber: 11
       }
-    }, "Formulario HEAD")), _react.default.createElement(_reactNative.View, {
+    }, "Cotizador de Prestamos"), _react.default.createElement(_Form.default, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15,
+        lineNumber: 14,
+        columnNumber: 11
+      }
+    })), _react.default.createElement(_reactNative.View, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17,
         columnNumber: 7
       }
     }, _react.default.createElement(_reactNative.Text, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16,
+        lineNumber: 18,
         columnNumber: 11
       }
     }, "Resultado")), _react.default.createElement(_reactNative.View, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18,
+        lineNumber: 20,
         columnNumber: 7
       }
     }, _react.default.createElement(_reactNative.Text, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19,
+        lineNumber: 21,
         columnNumber: 9
       }
     }, "Footer")));
@@ -99105,9 +99115,50 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       borderBottomLeftRadius: 30,
       borderBottomRightRadius: 30,
       alignItems: 'center'
+    },
+    titleApp: {
+      fontSize: 20,
+      fontWeight: 'bold',
+      color: '#fff',
+      marginTop: 15
     }
   });
-},473,[1,55,2,474],"App.js");
+},473,[1,55,2,474,475],"App.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Form;
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _colors = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "../utils/colors"));
+
+  var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/src/components/Form.js";
+
+  function Form() {
+    return _react.default.createElement(_reactNative.View, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7,
+        columnNumber: 9
+      }
+    }, _react.default.createElement(_reactNative.TextInput, {
+      placeholder: "Cantidad a pedir",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 8,
+        columnNumber: 13
+      }
+    }));
+  }
+},474,[1,55,2,475],"src/components/Form.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -99118,12 +99169,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     PRIMARY_COLOR_DARK: '#006691'
   };
   exports.default = _default;
-},474,[],"src/utils/colors.js");
+},475,[],"src/utils/colors.js");
 __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   module.exports = {
   "name": "Cotizadorprestamos",
   "displayName": "Cotizadorprestamos"
 };
-},475,[],"app.json");
+},476,[],"app.json");
 __r(94);
 __r(0);
