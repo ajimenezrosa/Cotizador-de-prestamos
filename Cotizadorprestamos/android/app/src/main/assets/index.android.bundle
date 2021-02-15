@@ -99062,47 +99062,55 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         lineNumber: 12,
         columnNumber: 7
       }
-    }, _react.default.createElement(_reactNative.Text, {
-      style: styles.titleApp,
+    }, _react.default.createElement(_reactNative.View, {
+      style: styles.background,
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 13,
-        columnNumber: 11
+        columnNumber: 9
       }
-    }, "Cotizador de Prestamos"), _react.default.createElement(_Form.default, {
+    }), _react.default.createElement(_reactNative.Text, {
+      style: styles.titleApp,
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 14,
         columnNumber: 11
       }
+    }, "Cotizador de Prestamos"), _react.default.createElement(_Form.default, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15,
+        columnNumber: 11
+      }
     })), _react.default.createElement(_reactNative.View, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17,
+        lineNumber: 18,
         columnNumber: 7
       }
     }, _react.default.createElement(_reactNative.Text, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18,
+        lineNumber: 19,
         columnNumber: 11
       }
     }, "Resultado")), _react.default.createElement(_reactNative.View, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20,
+        lineNumber: 21,
         columnNumber: 7
       }
     }, _react.default.createElement(_reactNative.Text, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21,
+        lineNumber: 22,
         columnNumber: 9
       }
     }, "Footer")));
@@ -99110,11 +99118,17 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var styles = _reactNative.StyleSheet.create({
     safeArea: {
+      height: 290,
+      alignItems: 'center'
+    },
+    background: {
       backgroundColor: _colors.default.PRIMARY_COLOR,
       height: 200,
+      width: "100%",
       borderBottomLeftRadius: 30,
       borderBottomRightRadius: 30,
-      alignItems: 'center'
+      position: 'absolute',
+      zIndex: -1
     },
     titleApp: {
       fontSize: 20,
@@ -99180,18 +99194,22 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         columnNumber: 13
       }
     })), _react.default.createElement(_reactNativePickerSelect.default, {
+      style: pickerSelectStyles,
       onValueChange: function onValueChange(value) {
         return console.log(value);
       },
       items: [{
-        label: 'Football',
-        value: 'football'
+        label: '3 Meses',
+        value: '3'
       }, {
-        label: 'Baseball',
-        value: 'baseball'
+        label: '6 Meses',
+        value: '6'
       }, {
-        label: 'Hockey',
-        value: 'hockey'
+        label: '12 Meses',
+        value: '12'
+      }, {
+        label: '24 Meses',
+        value: '24'
       }],
       __self: this,
       __source: {
@@ -99205,7 +99223,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var styles = _reactNative.StyleSheet.create({
     viewForm: {
       position: 'absolute',
-      bottom: -90,
+      bottom: 0,
       width: '85%',
       paddingHorizontal: 50,
       backgroundColor: _colors.default.PRIMARY_COLOR_DARK,
@@ -99232,6 +99250,33 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     inputPercentage: {
       width: '40%',
       marginLeft: 5
+    }
+  });
+
+  var pickerSelectStyles = _reactNative.StyleSheet.create({
+    inputIOS: {
+      fontSize: 16,
+      paddingVertical: 12,
+      paddingHorizontal: 10,
+      borderWidth: 1,
+      borderColor: 'gray',
+      borderRadius: 4,
+      color: 'black',
+      paddingRight: 30,
+      backgroundColor: '#FFF',
+      marginLeft: -5,
+      marginRight: -5
+    },
+    inputAndroid: {
+      fontSize: 16,
+      paddingVertical: 8,
+      paddingHorizontal: 10,
+      borderWidth: 0.5,
+      borderColor: 'gray',
+      borderRadius: 8,
+      color: 'black',
+      paddingRight: 30,
+      backgroundColor: '#FFF'
     }
   });
 },474,[1,55,2,475,484],"src/components/Form.js");
