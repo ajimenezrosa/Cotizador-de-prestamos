@@ -99030,28 +99030,53 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = App;
 
-  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
+  var _slicedToArray2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/slicedToArray"));
 
-  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[3], "react"));
 
-  var _Form = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./src/components/Form"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
 
-  var _colors = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./src/utils/colors"));
+  var _Form = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./src/components/Form"));
+
+  var _colors = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./src/utils/colors"));
 
   var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/App.js";
 
   function App() {
+    var _useState = (0, _react.useState)(null),
+        _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+        capital = _useState2[0],
+        setCapital = _useState2[1];
+
+    var _useState3 = (0, _react.useState)(null),
+        _useState4 = (0, _slicedToArray2.default)(_useState3, 2),
+        interes = _useState4[0],
+        setInteres = _useState4[1];
+
+    var _useState5 = (0, _react.useState)(null),
+        _useState6 = (0, _slicedToArray2.default)(_useState5, 2),
+        months = _useState6[0],
+        setMonths = _useState6[1];
+
+    var onsubmit = function onsubmit() {
+      console.log("capital => ", capital);
+      console.log("interes => ", interes);
+      console.log("Months => ", months);
+    };
+
     return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactNative.StatusBar, {
       barStyle: 'light-content',
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 11,
+        lineNumber: 22,
         columnNumber: 7
       }
     }), _react.default.createElement(_reactNative.SafeAreaView, {
@@ -99059,7 +99084,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12,
+        lineNumber: 23,
         columnNumber: 7
       }
     }, _react.default.createElement(_reactNative.View, {
@@ -99067,7 +99092,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13,
+        lineNumber: 24,
         columnNumber: 9
       }
     }), _react.default.createElement(_reactNative.Text, {
@@ -99075,42 +99100,54 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14,
+        lineNumber: 25,
         columnNumber: 11
       }
     }, "Cotizador de Prestamos"), _react.default.createElement(_Form.default, {
+      setCapital: setCapital,
+      setInteres: setInteres,
+      setMonths: setMonths,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15,
+        lineNumber: 26,
         columnNumber: 11
       }
     })), _react.default.createElement(_reactNative.View, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18,
+        lineNumber: 33,
         columnNumber: 7
       }
     }, _react.default.createElement(_reactNative.Text, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19,
+        lineNumber: 34,
         columnNumber: 11
       }
     }, "Resultado")), _react.default.createElement(_reactNative.View, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21,
+        lineNumber: 36,
         columnNumber: 7
       }
-    }, _react.default.createElement(_reactNative.Text, {
+    }, _react.default.createElement(_reactNative.Button, {
+      title: "Enviar",
+      onPress: onsubmit,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22,
+        lineNumber: 37,
+        columnNumber: 7
+      }
+    }), _react.default.createElement(_reactNative.Text, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 41,
         columnNumber: 9
       }
     }, "Footer")));
@@ -99137,7 +99174,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       marginTop: 15
     }
   });
-},473,[1,55,2,474,484],"App.js");
+},473,[1,9,14,55,2,474,484],"App.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -99156,13 +99193,16 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/src/components/Form.js";
 
-  function Form() {
+  function Form(props) {
+    var setCapital = props.setCapital,
+        setInteres = props.setInteres,
+        setMonths = props.setMonths;
     return _react.default.createElement(_reactNative.View, {
       style: styles.viewForm,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 9,
+        lineNumber: 14,
         columnNumber: 9
       }
     }, _react.default.createElement(_reactNative.View, {
@@ -99170,7 +99210,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 10,
+        lineNumber: 15,
         columnNumber: 13
       }
     }, _react.default.createElement(_reactNative.TextInput, {
@@ -99180,7 +99220,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12,
+        lineNumber: 17,
         columnNumber: 13
       }
     }), _react.default.createElement(_reactNative.TextInput, {
@@ -99190,7 +99230,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18,
+        lineNumber: 23,
         columnNumber: 13
       }
     })), _react.default.createElement(_reactNativePickerSelect.default, {
@@ -99214,7 +99254,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24,
+        lineNumber: 29,
         columnNumber: 12
       }
     }));
