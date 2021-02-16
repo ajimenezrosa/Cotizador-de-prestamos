@@ -99089,7 +99089,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       } else if (!months) {
         setErrorMessage("Selecciona los meses a pagar");
       } else {
-        var i = interest / 100;
+        var i = interes / 100;
         var fee = capital / ((1 - Math.pow(i + 1, -months)) / i);
         console.log(fee.toFixed(2).replace('.', ','));
         setTotal({
@@ -99147,6 +99147,10 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         columnNumber: 11
       }
     })), _react.default.createElement(_ResultCalculation.default, {
+      capital: capital,
+      interes: interes,
+      months: months,
+      total: total,
       errorMessage: errorMessage,
       __self: this,
       __source: {
@@ -99159,7 +99163,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58,
+        lineNumber: 63,
         columnNumber: 7
       }
     }));
@@ -101624,28 +101628,85 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/src/components/ResultCalculation.js";
 
   function ResultCalculation(props) {
-    var total = props.total,
+    var capital = props.capital,
+        interes = props.interes,
+        months = props.months,
+        total = props.total,
         errorMessage = props.errorMessage;
     return _react.default.createElement(_reactNative.View, {
       style: styles.content,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 11,
+        lineNumber: 10,
         columnNumber: 9
       }
-    }, total && _react.default.createElement(_reactNative.Text, {
+    }, total && _react.default.createElement(_reactNative.View, {
+      style: styles.boxResult,
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 12,
-        columnNumber: 27
+        columnNumber: 13
       }
-    }, "RESULT TOTAL"), _react.default.createElement(_reactNative.View, {
+    }, _react.default.createElement(_reactNative.Text, {
+      style: styles.title,
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 13,
+        columnNumber: 17
+      }
+    }, "RESUMEN"), _react.default.createElement(DataResult, {
+      title: "Cantidad solicitada",
+      value: capital + " $",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21,
+        columnNumber: 18
+      }
+    }), _react.default.createElement(DataResult, {
+      title: "Interes",
+      value: interes + " %",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22,
+        columnNumber: 18
+      }
+    }), _react.default.createElement(DataResult, {
+      title: "Plazos",
+      value: months + " Meses",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23,
+        columnNumber: 18
+      }
+    }), _react.default.createElement(DataResult, {
+      title: "Pago Mensual",
+      value: total.monthlyFee + " $",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24,
+        columnNumber: 18
+      }
+    }), _react.default.createElement(DataResult, {
+      title: "Total a pagar",
+      value: total.totalPayable + " $",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25,
+        columnNumber: 18
+      }
+    })), _react.default.createElement(_reactNative.View, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30,
         columnNumber: 17
       }
     }, _react.default.createElement(_reactNative.Text, {
@@ -101653,18 +101714,58 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14,
+        lineNumber: 31,
         columnNumber: 21
       }
     }, errorMessage)));
   }
 
-  ;
+  function DataResult(props) {
+    var title = props.title,
+        value = props.value;
+    return _react.default.createElement(_reactNative.View, {
+      style: styles.value,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 42,
+        columnNumber: 9
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 43,
+        columnNumber: 9
+      }
+    }, title), _react.default.createElement(_reactNative.Text, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 44,
+        columnNumber: 9
+      }
+    }, value));
+  }
 
   var styles = _reactNative.StyleSheet.create({
     content: {
-      marginTop: 100,
+      marginTop: 0,
       marginHorizontal: 40
+    },
+    boxResult: {
+      padding: 30
+    },
+    title: {
+      fontSize: 30,
+      textAlign: 'center',
+      fontWeight: 'bold',
+      marginBottom: 30
+    },
+    value: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      marginBottom: 20
     },
     error: {
       textAlign: 'center',

@@ -24,7 +24,7 @@ export default function App() {
         setErrorMessage("Selecciona los meses a pagar");
       }
       else {
-        const i = interest / 100;
+        const i = interes / 100;
         const fee = capital / ((1 - Math.pow(i + 1, -months)) / i);
         console.log(fee.toFixed(2).replace('.',','));
         setTotal({
@@ -53,7 +53,12 @@ const reset = () =>{
           />
       </SafeAreaView>
 
-      <ResultCalculation errorMessage={errorMessage} />
+      <ResultCalculation 
+          capital={capital}
+          interes={interes}
+          months={months}
+          total={total}
+          errorMessage={errorMessage} />
 
       <Footer calculate={calculate}/>
 
