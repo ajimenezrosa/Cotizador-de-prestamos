@@ -1339,7 +1339,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   _reactNative.AppRegistry.registerComponent(_app.name, function () {
     return _App.default;
   });
-},0,[1,2,473,486],"index.js");
+},0,[1,2,473,487],"index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -99049,6 +99049,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _colors = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "./src/utils/colors"));
 
+  var _ResultCalculation = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./src/components/ResultCalculation"));
+
   var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/App.js";
 
   function App() {
@@ -99067,16 +99069,39 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         months = _useState6[0],
         setMonths = _useState6[1];
 
-    var calcular = function calcular() {
+    var _useState7 = (0, _react.useState)(null),
+        _useState8 = (0, _slicedToArray2.default)(_useState7, 2),
+        total = _useState8[0],
+        setTotal = _useState8[1];
+
+    var _useState9 = (0, _react.useState)(''),
+        _useState10 = (0, _slicedToArray2.default)(_useState9, 2),
+        errorMessage = _useState10[0],
+        setErrorMessage = _useState10[1];
+
+    var calculate = function calculate() {
+      reset();
+
       if (!capital) {
-        console.log("Anade la cantidad que quieres solicitar");
+        setErrorMessage("Anade la cantidad que quieres solicitar");
       } else if (!interes) {
-        console.log("Anade el Interes del prestamo");
+        setErrorMessage("Anade el Interes del prestamo");
       } else if (!months) {
-        console.log("Selecciona los meses a pagar");
+        setErrorMessage("Selecciona los meses a pagar");
       } else {
-        console.log("Ok");
+        var i = interest / 100;
+        var fee = capital / ((1 - Math.pow(i + 1, -months)) / i);
+        console.log(fee.toFixed(2).replace('.', ','));
+        setTotal({
+          monthlyFee: fee.toFixed(2).replace('.', ','),
+          totalPayable: (fee * months).toFixed(2).replace('.', ',')
+        });
       }
+    };
+
+    var reset = function reset() {
+      setErrorMessage("");
+      setTotal(null);
     };
 
     return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactNative.StatusBar, {
@@ -99084,7 +99109,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30,
+        lineNumber: 45,
         columnNumber: 7
       }
     }), _react.default.createElement(_reactNative.SafeAreaView, {
@@ -99092,7 +99117,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31,
+        lineNumber: 46,
         columnNumber: 7
       }
     }, _react.default.createElement(_reactNative.View, {
@@ -99100,7 +99125,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32,
+        lineNumber: 47,
         columnNumber: 9
       }
     }), _react.default.createElement(_reactNative.Text, {
@@ -99108,7 +99133,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33,
+        lineNumber: 48,
         columnNumber: 11
       }
     }, "Cotizador de Prestamos"), _react.default.createElement(_Form.default, {
@@ -99118,29 +99143,23 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34,
+        lineNumber: 49,
         columnNumber: 11
       }
-    })), _react.default.createElement(_reactNative.View, {
+    })), _react.default.createElement(_ResultCalculation.default, {
+      errorMessage: errorMessage,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41,
+        lineNumber: 56,
         columnNumber: 7
       }
-    }, _react.default.createElement(_reactNative.Text, {
+    }), _react.default.createElement(_Footer.default, {
+      calculate: calculate,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42,
-        columnNumber: 11
-      }
-    }, "Resultado")), _react.default.createElement(_Footer.default, {
-      calcular: calcular,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 45,
+        lineNumber: 58,
         columnNumber: 7
       }
     }));
@@ -99167,7 +99186,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       marginTop: 15
     }
   });
-},473,[1,9,14,55,2,474,485,484],"App.js");
+},473,[1,9,14,55,2,474,485,484,486],"App.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -101590,11 +101609,76 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   });
 },485,[9,1,55,2,484],"src/components/Footer.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = ResultCalculation;
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[1], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/src/components/ResultCalculation.js";
+
+  function ResultCalculation(props) {
+    var total = props.total,
+        errorMessage = props.errorMessage;
+    return _react.default.createElement(_reactNative.View, {
+      style: styles.content,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11,
+        columnNumber: 9
+      }
+    }, total && _react.default.createElement(_reactNative.Text, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12,
+        columnNumber: 27
+      }
+    }, "RESULT TOTAL"), _react.default.createElement(_reactNative.View, {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13,
+        columnNumber: 17
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      style: styles.error,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14,
+        columnNumber: 21
+      }
+    }, errorMessage)));
+  }
+
+  ;
+
+  var styles = _reactNative.StyleSheet.create({
+    content: {
+      marginTop: 100,
+      marginHorizontal: 40
+    },
+    error: {
+      textAlign: 'center',
+      color: '#F00',
+      fontWeight: 'bold',
+      fontSize: 20
+    }
+  });
+},486,[9,55,2],"src/components/ResultCalculation.js");
 __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   module.exports = {
   "name": "Cotizadorprestamos",
   "displayName": "Cotizadorprestamos"
 };
-},486,[],"app.json");
+},487,[],"app.json");
 __r(94);
 __r(0);

@@ -4,21 +4,24 @@ import Form from './src/components/Form';
 import Footer from './src/components/Footer';
 import colors from './src/utils/colors';
 import { useState } from 'react';
+import ResultCalculation from './src/components/ResultCalculation';
 
 export default function App() {
   const [capital ,setCapital] = useState(null);
   const [interes ,setInteres] = useState(null);
   const [months, setMonths] = useState(null);
   const [total , setTotal] = useState(null);
+  const [errorMessage, setErrorMessage] =useState('');
 
 
-  const calcular = () => {
+  const calculate = () => {
+      reset();
       if(!capital){
-          console.log("Anade la cantidad que quieres solicitar");
+        setErrorMessage("Anade la cantidad que quieres solicitar");
       } else if(!interes){
-        console.log("Anade el Interes del prestamo");
+        setErrorMessage("Anade el Interes del prestamo");
       } else if(!months) {
-        console.log("Selecciona los meses a pagar");
+        setErrorMessage("Selecciona los meses a pagar");
       }
       else {
         const i = interest / 100;
@@ -30,6 +33,11 @@ export default function App() {
         });
       }
 };
+
+const reset = () =>{
+  setErrorMessage("");
+  setTotal(null);
+}
 
   return(
 
@@ -45,11 +53,9 @@ export default function App() {
           />
       </SafeAreaView>
 
-      <View>
-          <Text>Resultado</Text> 
-      </View>
+      <ResultCalculation errorMessage={errorMessage} />
 
-      <Footer calcular={calcular}/>
+      <Footer calculate={calculate}/>
 
     </>
     );
