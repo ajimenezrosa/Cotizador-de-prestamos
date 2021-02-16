@@ -99067,10 +99067,16 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         months = _useState6[0],
         setMonths = _useState6[1];
 
-    var onsubmit = function onsubmit() {
-      console.log("capital => ", capital);
-      console.log("interes => ", interes);
-      console.log("Months => ", months);
+    var calcular = function calcular() {
+      if (!capital) {
+        console.log("Anade la cantidad que quieres solicitar");
+      } else if (!interes) {
+        console.log("Anade el Interes del prestamo");
+      } else if (!months) {
+        console.log("Selecciona los meses a pagar");
+      } else {
+        console.log("Ok");
+      }
     };
 
     return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactNative.StatusBar, {
@@ -99078,7 +99084,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
+        lineNumber: 30,
         columnNumber: 7
       }
     }), _react.default.createElement(_reactNative.SafeAreaView, {
@@ -99086,7 +99092,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24,
+        lineNumber: 31,
         columnNumber: 7
       }
     }, _react.default.createElement(_reactNative.View, {
@@ -99094,7 +99100,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25,
+        lineNumber: 32,
         columnNumber: 9
       }
     }), _react.default.createElement(_reactNative.Text, {
@@ -99102,7 +99108,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26,
+        lineNumber: 33,
         columnNumber: 11
       }
     }, "Cotizador de Prestamos"), _react.default.createElement(_Form.default, {
@@ -99112,28 +99118,29 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27,
+        lineNumber: 34,
         columnNumber: 11
       }
     })), _react.default.createElement(_reactNative.View, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34,
+        lineNumber: 41,
         columnNumber: 7
       }
     }, _react.default.createElement(_reactNative.Text, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35,
+        lineNumber: 42,
         columnNumber: 11
       }
     }, "Resultado")), _react.default.createElement(_Footer.default, {
+      calcular: calcular,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38,
+        lineNumber: 45,
         columnNumber: 7
       }
     }));
@@ -99229,6 +99236,10 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       style: pickerSelectStyles,
       onValueChange: function onValueChange(value) {
         return setMonths(value);
+      },
+      placeholder: {
+        label: 'Selecciona los plazos...',
+        value: null
       },
       items: [{
         label: '3 Meses',
@@ -101515,21 +101526,23 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/src/components/Footer.js";
 
-  function Footer() {
+  function Footer(props) {
+    var calculate = props.calculate;
     return _react.default.createElement(_reactNative.View, {
       style: styles.viewFooter,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 10,
+        lineNumber: 15,
         columnNumber: 9
       }
     }, _react.default.createElement(_reactNative.TouchableOpacity, {
       style: styles.button,
+      onPress: calculate,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 11,
+        lineNumber: 16,
         columnNumber: 13
       }
     }, _react.default.createElement(_reactNative.Text, {
@@ -101537,7 +101550,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13,
+        lineNumber: 18,
         columnNumber: 17
       }
     }, "Calcular")));
