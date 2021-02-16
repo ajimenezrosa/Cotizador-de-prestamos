@@ -1339,7 +1339,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   _reactNative.AppRegistry.registerComponent(_app.name, function () {
     return _App.default;
   });
-},0,[1,2,473,485],"index.js");
+},0,[1,2,473,486],"index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -99045,7 +99045,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _Form = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./src/components/Form"));
 
-  var _colors = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./src/utils/colors"));
+  var _Footer = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./src/components/Footer"));
+
+  var _colors = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "./src/utils/colors"));
 
   var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/App.js";
 
@@ -99076,7 +99078,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22,
+        lineNumber: 23,
         columnNumber: 7
       }
     }), _react.default.createElement(_reactNative.SafeAreaView, {
@@ -99084,7 +99086,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
+        lineNumber: 24,
         columnNumber: 7
       }
     }, _react.default.createElement(_reactNative.View, {
@@ -99092,7 +99094,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24,
+        lineNumber: 25,
         columnNumber: 9
       }
     }), _react.default.createElement(_reactNative.Text, {
@@ -99100,7 +99102,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25,
+        lineNumber: 26,
         columnNumber: 11
       }
     }, "Cotizador de Prestamos"), _react.default.createElement(_Form.default, {
@@ -99110,47 +99112,31 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26,
+        lineNumber: 27,
         columnNumber: 11
       }
     })), _react.default.createElement(_reactNative.View, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33,
+        lineNumber: 34,
         columnNumber: 7
       }
     }, _react.default.createElement(_reactNative.Text, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34,
+        lineNumber: 35,
         columnNumber: 11
       }
-    }, "Resultado")), _react.default.createElement(_reactNative.View, {
+    }, "Resultado")), _react.default.createElement(_Footer.default, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36,
+        lineNumber: 38,
         columnNumber: 7
       }
-    }, _react.default.createElement(_reactNative.Button, {
-      title: "Enviar",
-      onPress: onsubmit,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 37,
-        columnNumber: 7
-      }
-    }), _react.default.createElement(_reactNative.Text, {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 41,
-        columnNumber: 9
-      }
-    }, "Footer")));
+    }));
   }
 
   var styles = _reactNative.StyleSheet.create({
@@ -99174,7 +99160,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       marginTop: 15
     }
   });
-},473,[1,9,14,55,2,474,484],"App.js");
+},473,[1,9,14,55,2,474,485,484],"App.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -99217,6 +99203,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       placeholder: "Cantidad a pedir",
       keyboardType: "numeric",
       style: styles.input,
+      onChange: function onChange(e) {
+        return setCapital(e.nativeEvent.text);
+      },
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -99227,16 +99216,19 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       placeholder: "Interes %",
       keyboardType: "numeric",
       style: [styles.input, styles.inputPercentage],
+      onChange: function onChange(e) {
+        return setInteres(e.nativeEvent.text);
+      },
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
+        lineNumber: 25,
         columnNumber: 13
       }
     })), _react.default.createElement(_reactNativePickerSelect.default, {
       style: pickerSelectStyles,
       onValueChange: function onValueChange(value) {
-        return console.log(value);
+        return setMonths(value);
       },
       items: [{
         label: '3 Meses',
@@ -99254,7 +99246,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29,
+        lineNumber: 32,
         columnNumber: 12
       }
     }));
@@ -101505,11 +101497,91 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   };
   exports.default = _default;
 },484,[],"src/utils/colors.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireWildcard");
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Footer;
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[2], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[3], "react-native");
+
+  var _colors = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "../utils/colors"));
+
+  var _jsxFileName = "/home/alejandro/Documents/Fuentes_React-native/Cotizador-de-prestamos/Cotizadorprestamos/src/components/Footer.js";
+
+  function Footer() {
+    return _react.default.createElement(_reactNative.View, {
+      style: styles.viewFooter,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 10,
+        columnNumber: 9
+      }
+    }, _react.default.createElement(_reactNative.TouchableOpacity, {
+      style: styles.button,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11,
+        columnNumber: 13
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      style: styles.text,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13,
+        columnNumber: 17
+      }
+    }, "Calcular")));
+  }
+
+  ;
+
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#2c3e50'
+    },
+    viewFooter: {
+      position: 'absolute',
+      bottom: 0,
+      width: '100%',
+      backgroundColor: _colors.default.PRIMARY_COLOR,
+      height: 100,
+      borderTopLeftRadius: 30,
+      borderTopRightRadius: 30,
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    text: {
+      fontWeight: 'bold',
+      fontSize: 18,
+      color: '#FFF',
+      textAlign: 'center'
+    },
+    button: {
+      backgroundColor: _colors.default.PRIMARY_COLOR_DARK,
+      padding: 16,
+      borderRadius: 20,
+      width: '75%'
+    }
+  });
+},485,[9,1,55,2,484],"src/components/Footer.js");
 __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   module.exports = {
   "name": "Cotizadorprestamos",
   "displayName": "Cotizadorprestamos"
 };
-},485,[],"app.json");
+},486,[],"app.json");
 __r(94);
 __r(0);
